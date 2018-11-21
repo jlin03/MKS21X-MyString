@@ -15,7 +15,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
 
   public static int length() {
     int count = 0;
-    for(int i = 0;i < this.length();i++) {
+    for(int i = 0;i < this.l;i++) {
       count += 1;
     }
     return count;
@@ -29,7 +29,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
     return newdata;
   }
 
-  public static String toString() {
+  public String toString() {
     String out = "";
     for(int i = 0;i < this.length();i++) {
       out += charAt(i);

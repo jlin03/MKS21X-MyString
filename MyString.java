@@ -1,6 +1,7 @@
 public class MyString implements CharSequence,Comparable<CharSequence> {
   private char[] data;
   public int l;
+  
   public MyString(CharSequence s) {
     l = s.length();
     data = new char[s.length()];
@@ -9,11 +10,11 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
     }
   }
 
-  public static char charAt(int index) {
+  public char charAt(int index) {
     return data[index];
   }
 
-  public static int length() {
+  public int length() {
     int count = 0;
     for(int i = 0;i < this.l;i++) {
       count += 1;
@@ -21,12 +22,12 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
     return count;
   }
 
-  public static CharSequence subSequence(int start, int end) {
-    char[] newdata = new char[end-start];
+  public CharSequence subSequence(int start, int end) {
+    String newdata = "";
     for(int i = start;i < end;i++) {
-      newdata[i-start] = this.charAt(i);
+      newdata += this.charAt(i);
     }
-    return newdata;
+	return newdata;
   }
 
   public String toString() {
@@ -37,7 +38,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
     return out;
   }
 
-  public static int compareTo(MyString o) {
+  public int compareTo(CharSequence o) {
     int out = 0;
     if(o.length() == this.length()) {
       for(int i = 0;i < this.length();i++) {

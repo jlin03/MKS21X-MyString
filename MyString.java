@@ -15,11 +15,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
   }
 
   public int length() {
-    int count = 0;
-    for(int i = 0;i < this.l;i++) {
-      count += 1;
-    }
-    return count;
+    return l;
   }
 
   public CharSequence subSequence(int start, int end) {
@@ -47,12 +43,14 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
         }
       }
     }
-    if(o.length() > this.length()) {
-      out = -1;
-    }
-    else {
-      out = 1;
-    }
+	else {
+		if(o.length() > this.length()) {
+			out = -1;
+		}
+		else {
+			out = 1;
+		}
+	}
     return out;
   }
 
